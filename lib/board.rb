@@ -3,6 +3,9 @@ class Board
 
   def initialize
     @spaces = { 1 => "1", 2 => "2", 3 => "3", 4 => "4", 5 => "5", 6 => "6", 7 => "7", 8 => "8", 9 => "9" }
+    @p1
+    @p2
+    @game_over
   end
 
   def draw_board
@@ -17,14 +20,14 @@ class Board
   end
 
   def winning_combos
-    columns = [[1, 4, 7] || [2, 5, 8] || [3, 6, 9]]
-    rows = [[1, 2, 3] || [4, 5, 6] || [7, 8, 9]]
-    diagnols = [[1, 5, 9] || [3, 5, 7]]
+    columns = [1, 4, 7] || [2, 5, 8] || [3, 6, 9]
+    rows = [1, 2, 3] || [4, 5, 6] || [7, 8, 9]
+    diagnols = [1, 5, 9] || [3, 5, 7]
 
-    if p1 || p2 = columns || rows || diagnols
-      game_over
+    if @p1 || @p2 = columns || rows || diagnols
+      @game_over
     else
-      game_over = false
+      @game_over = false
     end
   end 
 
