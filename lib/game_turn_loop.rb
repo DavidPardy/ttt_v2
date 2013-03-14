@@ -12,7 +12,7 @@ class GameTurnLoop
         print p1
         puts "\n"
         symbol = switch_symbols(symbol)
-        board.draw_board unless winning_combos
+        board.draw_board unless board.winning_combos
 
         selection2 = player.move
         board.spaces[selection2] = symbol
@@ -25,8 +25,6 @@ class GameTurnLoop
       end
   end
 
-  
-
   def self.switch_symbols(symbol)
     if symbol == 'X'
       symbol = 'O'
@@ -34,6 +32,6 @@ class GameTurnLoop
       symbol = 'X'
     end
   end
-
+  
 end
 
