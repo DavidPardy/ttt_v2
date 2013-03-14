@@ -12,7 +12,7 @@ class GameTurnLoop
         print p1
         puts "\n"
         symbol = switch_symbols(symbol)
-        board.draw_board unless game_ova #board.winning_combo_found
+        board.draw_board unless game_ova(board) #board.winning_combo_found
 
         selection2 = player.move
         board.spaces[selection2] = symbol
@@ -21,7 +21,7 @@ class GameTurnLoop
         print p2
         puts "\n"
         symbol = switch_symbols(symbol)
-        board.draw_board unless game_ova
+        board.draw_board unless game_ova(board)
       end
   end
 
@@ -33,7 +33,7 @@ class GameTurnLoop
     end
   end
   
-  def self.game_ova
+  def self.game_ova(board)
     if board.winning_combo_found == true
       puts "the game is up bro"
     else
