@@ -1,7 +1,6 @@
 class GameTurnLoop
   def self.play(board, player)
     game_over = false
-    #winning_combo_found = false
     board.draw_board
     symbol = 'X'
       while !game_over
@@ -33,18 +32,9 @@ class GameTurnLoop
       symbol = 'X'
     end
   end
-
-  def self.winning_combo_found
-    
-    [1, 4, 7] || [2, 5, 8] || [3, 6, 9] || [1, 2, 3] || [4, 5, 6] || [7, 8, 9] || [1, 5, 9] || [3, 5, 7]
-    #winning combos should just return true or false
-    #if columns == true
-     # "FUCK FUCK FUCK"
-    #end
-  end
-
+  
   def self.game_ova
-    if winning_combo_found == true
+    if board.winning_combo_found == true
       puts "the game is up bro"
     else
       puts "keep going"
