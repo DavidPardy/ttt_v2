@@ -28,29 +28,29 @@ class Board
     end
   end 
 
-  def computer_move
-    if @spaces[5] == "5"
-      puts "It's the computer's turn..."
-      sleep(2)
-      make_a_move(5, @computer)
-      puts "The computer player selected the middle spot."
-    else
-      @spaces.each do |spots, x_or_o|
-        if x_or_o != 'X' && x_or_o != 'O'
-          puts "It's the computer's turn..."
-          sleep(2)
-          make_a_move(spots.to_i, @computer)
-          break
-        end
-      end
-    end   
-  end
+  # def computer_move
+  #   if @spaces[5] == "5"
+  #     puts "It's the computer's turn..."
+  #     sleep(2)
+  #     make_a_move(5, @computer)
+  #     puts "The computer player selected the middle spot."
+  #   else
+  #     @spaces.each do |spots, x_or_o|
+  #       if x_or_o != 'X' && x_or_o != 'O'
+  #         puts "It's the computer's turn..."
+  #         sleep(2)
+  #         make_a_move(spots.to_i, @computer)
+  #         break
+  #       end
+  #     end
+  #   end   
+  # end
 
-  def make_a_move(space, tile_choice)
-    @spaces[space] = tile_choice
-    puts "Tile #{space} was chosen!"
-    @computer_selection[@computer]
-    puts "Mr. Computer, you've chose these values so far: #{@computer_selection}"
-  end
+  # def make_a_move(space, tile_choice)
+  #   @spaces[space] = tile_choice
+  #   puts "Tile #{space} was chosen!"
+  #   @computer_selection[@computer]
+  #   puts "Mr. Computer, you've chose these values so far: #{@computer_selection}"
+  # end
 
 end
