@@ -5,7 +5,6 @@ class Board
     @spaces = { 1 => "1", 2 => "2", 3 => "3", 4 => "4", 5 => "5", 6 => "6", 7 => "7", 8 => "8", 9 => "9" }
     #@p1
     #@p2
-    
   end
 
   def draw_board
@@ -18,6 +17,17 @@ class Board
     [#{@spaces[7]}]|[#{@spaces[8]}]|[#{@spaces[9]}]
     -----------"
   end
+
+
+  def winning_combo_found
+    
+    [1, 4, 7] || [2, 5, 8] || [3, 6, 9] || [1, 2, 3] || [4, 5, 6] || [7, 8, 9] || [1, 5, 9] || [3, 5, 7]
+    #winning combos should just return true or false
+    #if columns == true
+     # "FUCK FUCK FUCK"
+    #end
+  end
+
 
   # def winning_combo_found
   #   columns = [1, 4, 7] || [2, 5, 8] || [3, 6, 9]
