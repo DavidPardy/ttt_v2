@@ -16,6 +16,18 @@ class Board
     -----------"
   end
 
+  def winning_combos
+    columns = [[1, 4, 7] || [2, 5, 8] || [3, 6, 9]]
+    rows = [[1, 2, 3] || [4, 5, 6] || [7, 8, 9]]
+    diagnols = [[1, 5, 9] || [3, 5, 7]]
+
+    if p1 || p2 = columns || rows || diagnols
+      game_over
+    else
+      game_over = false
+    end
+  end 
+
   def computer_move
     if @spaces[5] == "5"
       puts "It's the computer's turn..."
@@ -34,20 +46,6 @@ class Board
     end   
   end
 
-  # def play
-  #   9.times do
-  #     if @turn == @human
-  #       human_prompt
-  #       draw_board
-  #       @turn = @computer
-  #     else
-  #       computer_move
-  #       draw_board
-  #       @turn = @human
-  #     end
-  #   end
-  # end
-  
   def make_a_move(space, tile_choice)
     @spaces[space] = tile_choice
     puts "Tile #{space} was chosen!"
@@ -55,23 +53,4 @@ class Board
     puts "Mr. Computer, you've chose these values so far: #{@computer_selection}"
   end
 
-  def human_winner(space, tile_choice)
-    @spaces[space] = tile_choice
-    if @human_selection =
-      [ @spaces[1], @spaces[2], @spaces[3] ] ||
-      [ @spaces[4], @spaces[5], @spaces[6] ] ||
-      [ @spaces[7], @spaces[8], @spaces[9] ] ||
-      [ @spaces[1], @spaces[4], @spaces[7] ] ||
-      [ @spaces[2], @spaces[5], @spaces[8] ] ||
-      [ @spaces[3], @spaces[6], @spaces[9] ] ||
-      [ @spaces[1], @spaces[5], @spaces[9] ] ||
-      [ @spaces[3], @spaces[5], @spaces[7] ]
-      puts "you won, broski! oh man"
-    end
-  end
-
-
-  def winning_combinations
-    [ @spaces[1], @spaces[2], @spaces[3] ]
-  end
 end
