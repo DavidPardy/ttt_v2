@@ -1,7 +1,5 @@
 class Computer
-
-  def initialize(computer_player)
-    
-  end
-
+	def move(space, tile_choice)
+		@spaces[space] = tile_choice
+	end
 end
