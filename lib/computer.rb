@@ -5,8 +5,8 @@ class Computer
 	end
 
 	def move(board, player, computer)
-		board.spaces.each do |spot, x_or_o|
-			if x_or_o != 'X' && x_or_o != 'O'
+		board.spaces.each do |spot, symbol|
+			if symbol != 'X' && symbol != 'O'
 				puts "It's the computer's turn..."
 				sleep(1)
 				random_move(board, space)
@@ -23,8 +23,13 @@ class Computer
 		
 	end
 
-	def blocking_move
-		
+	def blocking_move(board, player)
+		Board::WINNING_COMBOS.each do |combo|
+			difference = combo - player
+			if difference.length == 1
+				#If the difference is 1, this would mean one element. It takes 3 elements to win.
+				#So difference.first would just be that sole element, and that's where the computer should place a move.
+				move = difference.first
 	end
 
 end
