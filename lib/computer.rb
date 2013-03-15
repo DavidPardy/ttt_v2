@@ -9,7 +9,7 @@ class Computer
 			end
 		end
 	end
-	
+
 	def random_move(board, space)
 		board.spaces[space] = 'O'
 		puts "Tile #{space} was chosen by the computer player."
@@ -33,8 +33,6 @@ class Computer
 		Board::WINNING_COMBOS.each do |combo|
 			difference = combo - player
 			if difference.length == 1
-				#If the difference is 1, this would mean one element. It takes 3 elements to win.
-				#So difference.first would just be that sole element, and that's where the computer should place a move.
 				move = difference.first
 				if board.space_available?(move)
 					return move
@@ -48,8 +46,6 @@ class Computer
 		Board::WINNING_COMBOS.each do |combo|
 			difference = combo - player
 			if difference.length == 1
-				#If the difference is 1, this would mean one element. It takes 3 elements to win.
-				#So difference.first would just be that sole element, and that's where the computer should place a move.
 				move = difference.first
 				if board.space_available?(move)
 					return move
