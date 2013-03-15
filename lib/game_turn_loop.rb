@@ -26,12 +26,9 @@ class GameTurnLoop
       end
   end
 
-  def self.switch_symbols(symbol)
-    if symbol == 'X'
-      symbol = 'O'
-    else
-      symbol = 'X'
-    end
+  def self.get_symbol
+   symbol = @symbols.shift
+   @symbols.push(symbol)
   end
   
   def self.game_ova(board)
