@@ -7,23 +7,19 @@ class GameTurnLoop
     @game_over = false
 
     board.draw_board
-      while !@game_over
-        selection1 = player.move
-        board.spaces[selection1] = symbol
-        @p1 << selection1
-        print @p1
-        puts "\n"
-        symbol = switch_symbols(symbol)
-        board.draw_board unless game_ova(board) #board.winning_combo_found
+    while !@game_over
+      selection1 = player.move
+      board.spaces[selection1] = get_symbol
+      @p1 << selection1
+      puts "#{@p1} \n"
+      board.draw_board unless game_ova(board)
 
-        selection2 = player.move
-        board.spaces[selection2] = symbol
-        @p2 << selection2
-        print @p2
-        puts "\n"
-        symbol = switch_symbols(symbol)
-        board.draw_board unless game_ova(board)
-      end
+      selection2 = player.move
+      board.spaces[selection2] = get_symbol
+      @p2 << selection2
+      puts "#{@p2} \n"
+      board.draw_board unless game_ova(board)
+    end
   end
 
   def self.get_symbol
