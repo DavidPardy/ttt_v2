@@ -19,8 +19,19 @@ class Computer
 
 	end
 
-	def winning_move
-		
+	def winning_move(board, computer)
+		Board::WINNING_COMBOS.each do |combo|
+			difference = combo - player
+			if difference.length == 1
+				#If the difference is 1, this would mean one element. It takes 3 elements to win.
+				#So difference.first would just be that sole element, and that's where the computer should place a move.
+				move = difference.first
+				if board.space_available?(move)
+					return move
+				end
+			end
+		end
+		return false
 	end
 
 	def blocking_move(board, player)
@@ -30,6 +41,12 @@ class Computer
 				#If the difference is 1, this would mean one element. It takes 3 elements to win.
 				#So difference.first would just be that sole element, and that's where the computer should place a move.
 				move = difference.first
+				if board.space_available?(move)
+					return move
+				end
+			end
+		end
+		return false
 	end
 
 end
