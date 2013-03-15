@@ -34,7 +34,7 @@ class GameTurnLoop
   end
   
   def self.game_ova(board)
-    if board.winning_combo_found == true
+    if board.winning_combo_found.any?
       puts "the game is up bro"
     else
       puts "keep going"
