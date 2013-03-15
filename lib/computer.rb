@@ -1,5 +1,5 @@
 class Computer
-	def move(space, tile_choice)
-		@spaces[space] = tile_choice
+	def random_move(board, space)
+		spaces[space] = 'O'
 	end
 end
