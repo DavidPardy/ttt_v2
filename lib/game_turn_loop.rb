@@ -1,7 +1,6 @@
 class GameTurnLoop
   def self.play(board, player, computer)
     @symbols = ['X', 'O']
-
     @p1 = []
     @p2 = []
     @game_over = false
@@ -25,6 +24,7 @@ class GameTurnLoop
   def self.get_symbol
    symbol = @symbols.shift
    @symbols.push(symbol)
+   return symbol
   end
   
   def self.game_ova(board)
