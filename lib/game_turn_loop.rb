@@ -13,7 +13,7 @@ class GameTurnLoop
       puts "#{@p1} \n"
       board.draw_board unless game_ova(board)
 
-      selection2 = player.move
+      selection2 = computer.move(board, @p1, @p2)
       board.spaces[selection2] = get_symbol
       @p2 << selection2
       puts "#{@p2} \n"
