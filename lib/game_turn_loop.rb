@@ -28,10 +28,14 @@ class GameTurnLoop
   end
   
   def self.game_ova(board)
-    if board.winning_combo_found == @p1
-      puts "the game is up bro"
+    if board.winning_combo_found(@p1, @p2) == "human_winner"
+      puts "human player wins"
+      @game_over
+    elsif board.winning_combo_found(@p1, @p2) == "computer_winner"
+      puts "computer player wins"
+      @game_over
     else
-      puts "keep going"
+      puts "no one wins"
     end
   end
 
