@@ -27,7 +27,7 @@ class Board
   end
 
   def available_space?(space)
-    return true if @spaces[space] == space
+    return true if @spaces[space] == space.to_s
   end
 
 end
