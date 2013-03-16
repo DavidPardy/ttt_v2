@@ -50,6 +50,7 @@ class Computer
 			if difference.length == 1
 				move = difference.first
 				if board.available_space?(move)
+					sleep(1)
 					return move
 				end
 			end
