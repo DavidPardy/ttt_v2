@@ -23,7 +23,7 @@ class Game
 
   def self.get_symbol
    symbol = @symbols.shift
-   @symbols.push(symbol)
+   @symbols << symbol
    return symbol
   end
   
