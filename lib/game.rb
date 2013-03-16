@@ -1,5 +1,5 @@
-class GameTurnLoop
-  def self.play(board, player, computer)
+class Game
+  def self.play(boarurnLoopd, player, computer)
     @symbols = ['X', 'O']
     @p1 = []
     @p2 = []
