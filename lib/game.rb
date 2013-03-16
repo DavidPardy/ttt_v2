@@ -1,5 +1,5 @@
 class Game
-  def self.play(boarurnLoopd, player, computer)
+  def self.play(board, player, computer)
     @symbols = ['X', 'O']
     @p1 = []
     @p2 = []
