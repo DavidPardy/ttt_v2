@@ -1,11 +1,13 @@
 class Computer
 	def move(board, player, computer)
-		board.spaces.each do |space, symbol|
-			if symbol != 'X' && symbol != 'O'
-				puts "It's the computer's turn..."
-				sleep(1)
-				random_move(board, space)
-				break
+		if optimal_move(board, player, computer) == false
+			board.spaces.each do |space, symbol|
+				if symbol != 'X' && symbol != 'O'
+					puts "It's the computer's turn..."
+					sleep(1)
+					random_move(board, space)
+					break
+				end
 			end
 		end
 	end
@@ -15,7 +17,7 @@ class Computer
 		puts "Tile #{space} was chosen by the computer player."
 	end
 
-	def optimal_move
+	def optimal_move(board, player, computer)
 		winning = winning_move(board, computer)
 		optimal = winning
 
@@ -31,10 +33,10 @@ class Computer
 
 	def winning_move(board, computer)
 		Board::WINNING_COMBOS.each do |combo|
-			difference = combo - player
+			difference = combo - computer
 			if difference.length == 1
 				move = difference.first
-				if board.space_available?(move)
+				if board.available_space?(move)
 					return move
 				end
 			end
@@ -47,7 +49,7 @@ class Computer
 			difference = combo - player
 			if difference.length == 1
 				move = difference.first
-				if board.space_available?(move)
+				if board.available_space?(move)
 					return move
 				end
 			end
