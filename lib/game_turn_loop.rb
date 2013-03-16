@@ -12,7 +12,7 @@ class GameTurnLoop
       @p1 << player_move
       puts "#{@p1} \n"
       board.draw_board unless game_ova(board)
-
+      break if game_ova
       computer_move = computer.move(board, @p1, @p2)
       board.spaces[computer_move] = get_symbol
       @p2 << computer_move
