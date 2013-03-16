@@ -4,8 +4,7 @@ To Play:
 
 - Open up your terminal and type in 'git clone https://github.com/DavidPardy/ttt_v2.git'
 
-- Once that process has taken place, type in 'cd ttt_v2', then 'cd lib
-.
+- Once that process has taken place, type in 'cd ttt_v2', then 'cd lib'.
 
 - To run the game, type in 'ruby start_game.rb'. This should bring up the board and ask for human input.
 
