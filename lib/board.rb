@@ -18,9 +18,9 @@ class Board
     -----------"
   end
 
-  def winning_combo_found(human_player, computer_player)
-    human_winner = WINNING_COMBOS.select { |combo| combo == human_player}.any?
-    computer_winner = WINNING_COMBOS.select { |combo| combo == computer_player}.any?
+  def winning_combo_found(human_human, computer_human)
+    human_winner = WINNING_COMBOS.select { |combo| combo == human_human}.any?
+    computer_winner = WINNING_COMBOS.select { |combo| combo == computer_human}.any?
     return "human_winner" if human_winner
     return "computer_winner" if computer_winner
     return false

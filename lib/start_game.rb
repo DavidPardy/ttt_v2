@@ -2,10 +2,10 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'game'
 require 'board'
-require 'player'
+require 'human'
 require 'computer'
 
 board = Board.new
-player = Player.new
+human = Human.new
 computer = Computer.new
-Game.play(board, player, computer)
+Game.play(board, human, computer)

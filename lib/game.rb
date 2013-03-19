@@ -1,5 +1,5 @@
 class Game
-  def self.play(board, player, computer)
+  def self.play(board, human, computer)
     @symbols = ['X', 'O']
     @p1 = []
     @p2 = []
@@ -7,9 +7,9 @@ class Game
 
     board.draw_board
     while !@game_over
-      player_move = player.move
-      board.spaces[player_move] = get_symbol
-      @p1 << player_move
+      human_move = human.move
+      board.spaces[human_move] = get_symbol
+      @p1 << human_move
       puts "#{@p1} \n"
       board.draw_board unless game_ova(board)
       break if @game_over
@@ -29,10 +29,10 @@ class Game
   
   def self.game_ova(board)
     if board.winning_combo_found(@p1, @p2) == "human_winner"
-      puts "human player wins"
+      puts "human human wins"
       @game_over = true
     elsif board.winning_combo_found(@p1, @p2) == "computer_winner"
-      puts "computer player wins"
+      puts "computer human wins"
       @game_over = true
     else
       puts "no one wins"
