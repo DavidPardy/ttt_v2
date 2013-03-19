@@ -14,7 +14,7 @@ class Computer
 
 	def random_move(board, space)
 		board.spaces[space] = 'O'
-		puts "Tile #{space} was chosen by the computer player."
+		puts "Tile #{space} was chosen by the computer."
 	end
 
 	def optimal_move(board, player, computer)
