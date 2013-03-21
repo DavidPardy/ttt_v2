@@ -5,7 +5,7 @@ class Computer
         if symbol != 'X' && symbol != 'O'
           puts "It's the computer's turn..."
           sleep(1)
-          random_move(board, space)
+          random_move(board, 5)
           break
         end
       end
