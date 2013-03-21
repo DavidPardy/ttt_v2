@@ -25,7 +25,7 @@ class Computer
     optimal ||= blocking
 
     if optimal != false
-      random_move(board, optimal)
+      random_move(board, blocking)
     else
       return false
     end
