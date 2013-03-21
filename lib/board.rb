@@ -23,7 +23,6 @@ class Board
     computer_winner = WINNING_COMBOS.select { |combo| combo == computer}.any?
     return "human_winner" if human_winner
     return "computer_winner" if computer_winner
-    return false
   end
 
   def available_space?(space)
