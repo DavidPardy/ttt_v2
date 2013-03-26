@@ -10,16 +10,16 @@ class Computer
 
   end
 
-
-  def random_smart_move(board, symbol)
-    array = [1, 3, 5, 7, 9]
-    symbol = array.sample 
-    board.spaces[symbol] = 'O'
-    return symbol if board.available_space?(symbol) 
+  def random_smart_move(board)
+    available = nil
+    [1, 3, 5, 7, 9].shuffle.each do |n|
+      symbol = n
+      available = symbol if available_space?(n)
+      break if available
   end
 
   def competitive_move(board, computer)
- 
+  
   end
 
   def random_move(board, space)
