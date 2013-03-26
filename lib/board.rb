@@ -22,7 +22,7 @@ class Board
     human_winner = WINNING_COMBOS.select { |combo| (human & combo).sort == combo }
     computer_winner = WINNING_COMBOS.select { |combo| (computer & combo).sort == combo }
     return "human_winner" if human_winner.any?
-    return "computer_winner" if computer_winner.any
+    return "computer_winner" if computer_winner.any?
   end
 
   def available_space?(space)
