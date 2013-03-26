@@ -7,7 +7,6 @@ class Computer
     else
       chosen_move = optimal
     end
-
   end
 
   def random_smart_move(board)
@@ -22,17 +21,24 @@ class Computer
   
   end
 
+  def filler_move
+    available = nil
+    [2, 4, 6, 8].shuffle.each do |n|
+      symbol = n
+      available = symbol if available_space?(n)
+      break if available
+    end
+    return available
+  end
+
   def optimal_move(board, human, computer)
     winning = winning_move(board, computer)
-    optimal = winning
+    chosen_move = winning
     blocking = blocking_move(board, human)
-    #in_process_of_winning ||= optimal
-    optimal ||= blocking
 
-    if optimal != false
-      random_move(board, optimal)
-    #elsif blocking == false
-      #random_move(board, optimal)
+    chosen_move ||= blocking
+    if chosen_move != false
+      return chosen_move
     else
       return false
     end
