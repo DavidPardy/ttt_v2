@@ -22,11 +22,6 @@ class Computer
   
   end
 
-  def random_move(board, space)
-    board.spaces[space] = 'O'
-    puts "Tile #{space} was chosen by the computer."
-  end
-
   def optimal_move(board, human, computer)
     winning = winning_move(board, computer)
     optimal = winning
