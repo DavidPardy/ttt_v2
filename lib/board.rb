@@ -2,7 +2,7 @@ class Board
   attr_reader :spaces
 
   WINNING_COMBOS = [[1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7]]
-
+  NON_WINNING_COMBOS = [[1, 6], [1, 8], [2, 4], [2, 6], [2, 7], [2, 9], [3, 4], [3, 8], [4, 8], [4, 9], [6, 7], [6, 8]]
   def initialize
     @spaces = { 1 => "1", 2 => "2", 3 => "3", 4 => "4", 5 => "5", 6 => "6", 7 => "7", 8 => "8", 9 => "9" }
   end
@@ -26,7 +26,12 @@ class Board
   end
 
   def available_space?(space)
-    return true if @spaces[space] == space.to_s
+    #return true if @spaces[space].nil? #== space.to_s
+    @spaces[space].nil?
+  end
+
+  def get_empty_spaces
+   (1..9).select{|space| @spaces[space].nil?}
   end
 
 end
