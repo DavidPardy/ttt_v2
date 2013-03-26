@@ -34,10 +34,6 @@ class Game
     elsif board.winning_combo_found(@p1, @p2) == "computer_winner"
       puts "computer human wins"
       @game_over = true
-    #elsif board.winning_combo_found(@p1, @p2) == false
-      #puts "cat's game"
-    else
-      puts "no one wins"
     end
   end
 
