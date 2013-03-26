@@ -29,10 +29,10 @@ class Game
   
   def self.game_ova(board)
     if board.winning_combo_found(@p1, @p2) == "human_winner"
-      puts "human human wins"
+      puts "human player wins"
       @game_over = true
     elsif board.winning_combo_found(@p1, @p2) == "computer_winner"
-      puts "computer human wins"
+      puts "computer player wins"
       @game_over = true
     end
   end
