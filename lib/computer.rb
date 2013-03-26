@@ -7,26 +7,28 @@ class Computer
     else
       chosen_move = optimal
     end
+    chosen_move
   end
 
   def random_smart_move(board)
     available = nil
     [1, 3, 5, 7, 9].shuffle.each do |n|
       symbol = n
-      available = symbol if available_space?(n)
+      available = symbol if board.available_space?(n)
       break if available
     end
+    return available || filler_move(board)
   end
 
   def competitive_move(board, computer)
   
   end
 
-  def filler_move
+  def filler_move(board)
     available = nil
     [2, 4, 6, 8].shuffle.each do |n|
       symbol = n
-      available = symbol if available_space?(n)
+      available = symbol if board.available_space?(n)
       break if available
     end
     return available
