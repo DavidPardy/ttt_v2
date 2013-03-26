@@ -3,7 +3,7 @@ class Computer
     optimal = optimal_move(board, human, computer)
       puts "It's the computer's turn..."
     if optimal == false
-      chosen_move = random_smart_move(board, symbol)
+      chosen_move = random_smart_move(board)
     else
       chosen_move = optimal
     end
@@ -15,6 +15,7 @@ class Computer
       symbol = n
       available = symbol if available_space?(n)
       break if available
+    end
   end
 
   def competitive_move(board, computer)
