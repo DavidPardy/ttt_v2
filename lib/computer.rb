@@ -1,41 +1,15 @@
 class Computer
-  # def move(board, human, computer)
-  #   if optimal_move(board, human, computer) == false
-  #     blocking_move(board, human)
-  #   elsif blocking_move(board, human) == false
-  #     random_move(board, 9)
-  #   else
-  #     puts "cat's game"
-  #   end
-  # end
-
-
   def move(board, human, computer)
-    if optimal_move(board, human, computer) == false
-      board.spaces.each do |space, symbol|
-        puts "It's the computer's turn..."
-        random_smart_move(board, symbol)
-        break
-      end
+    optimal = optimal_move(board, human, computer)
+      puts "It's the computer's turn..."
+    if optimal == false
+      chosen_move = random_smart_move(board, symbol)
+    else
+      chosen_move = optimal
     end
+
   end
 
-  def empty_spaces(board, emptiness)
-    
-  end
-
-  # def inbetween_move(board, computer)
-  #   optimal_move(board, human, computer) == false && blocking_move(board, human) == false
-  #   Board::WINNING_COMBOS.each do |combo|
-  #     difference = combo - computer
-  #     if difference.length == 2
-  #       move = difference[1]
-  #       if board.available_space?(move)
-  #         return move
-  #       end
-  #     end
-  #   end
-  # end
 
   def random_smart_move(board, symbol)
     array = [1, 3, 5, 7, 9]
