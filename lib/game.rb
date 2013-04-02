@@ -11,28 +11,31 @@ class Game
       board.spaces[human_move] = get_symbol
       @p1 << human_move
       puts "#{@p1} \n"
-      board.draw_board unless game_ova(board)
+      board.draw_board unless game_loop(board)
       break if @game_over
       computer_move = computer.move(board, @p1, @p2)
       board.spaces[computer_move] = get_symbol
       @p2 << computer_move
       puts "#{@p2} \n"
-      board.draw_board unless game_ova(board)
+      board.draw_board unless game_loop(board)
     end
   end
 
   def self.get_symbol
-   symbol = @symbols.shift
-   @symbols << symbol
-   return symbol
+    symbol = @symbols.shift
+    @symbols << symbol
+    return symbol
   end
   
-  def self.game_ova(board)
-    if board.winning_combo_found(@p1, @p2) == "human_winner"
-      puts "human player wins"
+  def self.game_loop(board)
+    if board.winning_combo_found(@p1, @p2) == "winner"
+      puts "there's a winner!"
       @game_over = true
-    elsif board.winning_combo_found(@p1, @p2) == "computer_winner"
-      puts "computer player wins"
+    elsif board.winning_combo_found(@p1, @p2) == nil
+      puts "keep going"
+      @game_over = false
+    elsif board.winning_combo_found(@p1, @p2) == "tie"
+      puts "there is not a winner"
       @game_over = true
     end
   end
