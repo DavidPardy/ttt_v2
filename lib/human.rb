@@ -4,6 +4,3 @@ class Human
     gets.to_i
   end
 end
-
-
-
