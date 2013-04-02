@@ -19,10 +19,10 @@ class Board
   end
 
   def winning_combo_found(human, computer)
-    human_winner = WINNING_COMBOS.select { |combo| (human & combo).sort == combo }
-    computer_winner = WINNING_COMBOS.select { |combo| (computer & combo).sort == combo }
-    return "human_winner" if human_winner.any?
-    return "computer_winner" if computer_winner.any?
+    winner = WINNING_COMBOS.select { |combo| (human & combo).sort == combo || (computer & combo).sort == combo }
+    return "winner" if winner.any?
+    tie = human.length == 5 && computer.length == 4
+    return "tie" if tie == true
   end
 
   def available_space?(space)
@@ -30,3 +30,4 @@ class Board
   end
 
 end
+
