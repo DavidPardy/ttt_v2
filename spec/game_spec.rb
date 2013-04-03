@@ -1,15 +1,13 @@
-#/spec/game_spec.rb
-require 'rspec'
 require 'game'
+require 'rspec'
 
 describe "selects winning move" do
-  it "selects spot 3 when spot 3 is a winning move" do
-    @p1 = [2, 6, 4]
-    @p2 = ['O', 'O', 3]
+  it "the computer selects spot 3 when spot 3 is a winning move for computer" do
+    board = Board.new
     computer = Computer.new
-    a_winning_board_combo = [1, 2, 3]
-    computer_move = computer.move(a_winning_board_combo, @p1, @p2)
-    computer_move.should == 3
+    computer_move = computer.move(board, @p1, @p2)
+    board.spaces[computer_move] = ['O', 'O', 3]
+    board.spaces[computer_move].should == ['O', 'O', 'O']
   end
 end
      
