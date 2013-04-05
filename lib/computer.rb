@@ -15,8 +15,8 @@ class Computer
     if board.available_space?(5)
       available = 5
     else
-      [1, 3, 7, 9].shuffle.each do |n|
-        symbol = n; available = symbol if board.available_space?(n)
+      [1, 3, 7, 9].shuffle.each do |symbol|
+        available = symbol if board.available_space?(symbol)
         break if available
       end
     end
@@ -24,6 +24,17 @@ class Computer
   end
 
   def competitive_move(board, computer)
+    #this has to be completed, random_smart_move and filler_move arent good enough
+    Board::WINNING_COMBOS.each do |combo|
+      difference = combo - computer
+      if difference.length == 2
+        move = difference.first
+        if board.available_space?(move)
+          return move
+        end
+      end
+    end
+    return false
   
   end
 
@@ -42,11 +53,15 @@ class Computer
     chosen_move = winning
     blocking = blocking_move(board, human)
 
+    filler = filler_move(board)
+    random_smart = random_smart_move(board) 
+    competitive = competitive_move(board, computer)
+
     chosen_move ||= blocking
     if chosen_move != false
       return chosen_move
     else
-      return false
+      return competitive
     end
   end
 
@@ -69,7 +84,6 @@ class Computer
       if difference.length == 1
         move = difference.first
         if board.available_space?(move)
-          sleep(1)
           return move
         end
       end
