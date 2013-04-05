@@ -5,11 +5,8 @@ What is Necessary to Play:
 - You will need Ruby installed. For Mac Users, I highly recommend [RVM](https://rvm.io/)
 - Open up your Mac OS X Terminal. This can be found by hitting command + space at the same time. Type in 'terminal' and it will appear in the list. Click to open.
 - Once your terminal is open, copy and paste the below line to install RVM
-	\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
 
-Open up your terminal and type in 'git clone https://github.com/DavidPardy/ttt_v2.git'
-
-- Once that process has taken place, type in 'cd ttt_v2', then 'cd lib'.
+- You will also need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount)) installed. This is a version control management system. Choose the top .dmg package to install. 
 
 - To run the game, type in 'ruby start_game.rb'. This should bring up the board and ask for human input.
 
