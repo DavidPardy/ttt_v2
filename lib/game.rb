@@ -10,13 +10,11 @@ class Game
       human_move = human.move
       board.spaces[human_move] = get_symbol
       @p1 << human_move
-      puts "#{@p1} \n"
       board.draw_board unless game_loop(board)
       break if @game_over
       computer_move = computer.move(board, @p1, @p2)
       board.spaces[computer_move] = get_symbol
       @p2 << computer_move
-      puts "#{@p2} \n"
       board.draw_board unless game_loop(board)
     end
   end
@@ -32,7 +30,6 @@ class Game
       puts "there's a winner!"
       @game_over = true
     elsif board.winning_combo_found(@p1, @p2) == nil
-      puts "keep going"
       @game_over = false
     elsif board.winning_combo_found(@p1, @p2) == "tie"
       puts "there is not a winner"
