@@ -8,6 +8,7 @@ class Board
   end
 
   def draw_board
+    system('clear')
     puts "David Pardy's Tic Tac Toe Game for 8th Light
     -----------
     [#{@spaces[1]}]|[#{@spaces[2]}]|[#{@spaces[3]}]
