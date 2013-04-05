@@ -1,8 +1,10 @@
+Tic-Tac-Toe Built Using the Ruby Programming Language
+========
+What is Necessary to Play:
+--------
+- You will need Ruby installed. For Mac Users, I highly recommend [Ruby Version Manager](https://rvm.io/)Ruby Version Manager
 
-
-	To Play:
-
-- Open up your terminal and type in 'git clone https://github.com/DavidPardy/ttt_v2.git'
+Open up your terminal and type in 'git clone https://github.com/DavidPardy/ttt_v2.git'
 
 - Once that process has taken place, type in 'cd ttt_v2', then 'cd lib'.
 
