@@ -12,10 +12,14 @@ class Computer
 
   def random_smart_move(board)
     available = nil
-    [1, 3, 5, 7, 9].shuffle.each do |n|
-      symbol = n
-      available = symbol if board.available_space?(n)
-      break if available
+    if board.available_space?(5)
+      available = 5
+    else
+      [1, 3, 7, 9].shuffle.each do |n|
+        symbol = n
+        available = symbol if board.available_space?(n)
+        break if available
+      end
     end
     return available || filler_move(board)
   end
