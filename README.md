@@ -1,6 +1,6 @@
 
 
-To Play:
+	To Play:
 
 - Open up your terminal and type in 'git clone https://github.com/DavidPardy/ttt_v2.git'
 
