@@ -3,15 +3,16 @@ class Computer
     optimal = optimal_move(board, human, computer)
       puts "It's the computer's turn..."
     if optimal == false
-      chosen_move = random_smart_move(board)
+      chosen_move = random_smart_move(board, computer)
     else
       chosen_move = optimal
     end
     chosen_move
   end
 
-  def random_smart_move(board)
+  def random_smart_move(board, computer)
     available = nil
+    comp = competitive_move(board, computer)
     if board.available_space?(5)
       available = 5
     else
@@ -20,11 +21,10 @@ class Computer
         break if available
       end
     end
-    return available || filler_move(board)
+    return available || comp
   end
 
   def competitive_move(board, computer)
-    #this has to be completed, random_smart_move and filler_move arent good enough
     Board::WINNING_COMBOS.each do |combo|
       difference = combo - computer
       if difference.length == 2
@@ -35,26 +35,12 @@ class Computer
       end
     end
     return false
-  
-  end
-
-  def filler_move(board)
-    available = nil
-    [2, 4, 6, 8].shuffle.each do |n|
-      symbol = n
-      available = symbol if board.available_space?(n)
-      break if available
-    end
-    return available
   end
 
   def optimal_move(board, human, computer)
     winning = winning_move(board, computer)
     chosen_move = winning
     blocking = blocking_move(board, human)
-
-    filler = filler_move(board)
-    random_smart = random_smart_move(board) 
     competitive = competitive_move(board, computer)
 
     chosen_move ||= blocking
