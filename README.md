@@ -6,7 +6,7 @@ What is Necessary to Play:
 - Open up your Mac OS X Terminal. This can be found by hitting command + space at the same time. Type in 'terminal' and it will appear in the list. Click to open.
 - Once your terminal is open, copy and paste the below line to install RVM
 
-- You will also need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount)) installed. This is a version control management system. Choose the top .dmg package to install. 
+- You will also need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. 
 
 - To run the game, type in 'ruby start_game.rb'. This should bring up the board and ask for human input.
 
