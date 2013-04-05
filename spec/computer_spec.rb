@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe "selects winning move" do
   it "the computer selects spot 3 when spot 3 is a winning move for computer" do
     computer = Computer.new
