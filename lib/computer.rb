@@ -16,8 +16,7 @@ class Computer
       available = 5
     else
       [1, 3, 7, 9].shuffle.each do |n|
-        symbol = n
-        available = symbol if board.available_space?(n)
+        symbol = n; available = symbol if board.available_space?(n)
         break if available
       end
     end
