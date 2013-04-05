@@ -1,10 +1,13 @@
 class Computer
   def move(board, human, computer)
     optimal = optimal_move(board, human, computer)
+      sleep(1)
       puts "It's the computer's turn..."
     if optimal == false
+      sleep(3)
       chosen_move = random_smart_move(board, computer)
     else
+      sleep(3)
       chosen_move = optimal
     end
     chosen_move
