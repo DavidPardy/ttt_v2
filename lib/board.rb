@@ -9,7 +9,7 @@ class Board
 
   def draw_board
     system('clear')
-    puts "David Pardy's Tic Tac Toe Game for 8th Light
+    puts "David Pardy's Tic Tac Toe Game. Please wait until prompted to enter a move:
     -----------
     [#{@spaces[1]}]|[#{@spaces[2]}]|[#{@spaces[3]}]
     -----------
