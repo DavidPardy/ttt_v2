@@ -28,7 +28,7 @@ class Computer
     Board::WINNING_COMBOS.each do |combo|
       difference = combo - computer
       if difference.length == 2
-        move = difference.first
+        move = difference.last
         if board.available_space?(move)
           return move
         end
