@@ -10,7 +10,7 @@ You may want to make a folder for this repository. To do so, type:
 
 		mkdir myfoldername
 
-- To change directories to get into that folder, type
+To change directories to get into that folder, type
 
 		cd my foldername
 
