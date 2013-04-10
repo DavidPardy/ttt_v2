@@ -14,19 +14,18 @@ To change directories to get into that folder, type
 
 		cd my foldername
 
-- Once your terminal is open (and in the above folder you created, if so desired), copy and paste the below line to install RVM
+Once your terminal is open (and in the above folder you created, if so desired), copy and paste the below line to install RVM
 
 		\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
 
-- RVM doesn't install Ruby, but gives you the ability to do so (as it is just a Ruby Version Manager). To install Ruby 1.9.3, type this in the terminal:
+RVM doesn't install Ruby, but gives you the ability to do so (as it is just a Ruby Version Manager). To install Ruby 1.9.3, type this in the terminal:
 
 		rvm get head && rvm reload
-
-- After that process finishes, type: 
+After that process finishes, type: 
 
 		rvm install 1.9.3
 
-Git Clone This Repository VS. Downloading the Zip Format of this Application:
+Git Clone Repository VS. Downloading the Zip Format of this App:
 --------
 
 - If you go to the top of this page you will see a few buttons to click under 'DavidPardy/ttt_v2'. Those being 'ZIP', 'HTTP', 'SSH', and 'Git Read-Only'.
