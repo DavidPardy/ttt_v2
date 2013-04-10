@@ -26,6 +26,19 @@ What is Necessary to Play:
 
 		rvm install 1.9.3
 
+Git Clone This Repository VS. Downloading the Zip Format of this Application:
+--------
+
+- If you go to the top of this page you will see a few buttons to click under 'DavidPardy/ttt_v2'. Those being 'ZIP', 'HTTP', 'SSH', and 'Git Read-Only'.
+
+- If you want to play this game without going through the hassle of installing Git, click the 'ZIP' button and it should download this application to your 'Downloads' directory. Once downloaded, copy this folder over to your 'myfoldername' you created earlier. Since the app is called 'ttt_v2' and you should still be in 'myfoldername' from earlier, type:
+
+		cd ttt_v2
+
+- Now you are in the Tic-Tac-Toe program. To play, type:
+
+		ruby lib/start_game.rb
+
 - If you want to do a git clone of this repository, you will need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. Follow the directions and choose the default features.
 
 - Now that Git and Ruby are installed
