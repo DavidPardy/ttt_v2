@@ -13,9 +13,9 @@ You may want to make a folder for this repository. To do so, type:
 
 		mkdir myfoldername
 
-To change directories to get into that folder, type
+To change directories (cd) to get into that folder, type
 
-		cd my foldername
+		cd myfoldername
 
 Once your terminal is open (and in the above folder you created, if so desired), copy and paste the below line to install RVM
 
