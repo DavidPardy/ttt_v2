@@ -8,7 +8,7 @@ What is Necessary to Play:
 
 - Once your terminal is open, copy and paste the below line to install RVM
 
-    \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
+	\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
 
 - You will also need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. Follow the directions and choose the default features.
 
