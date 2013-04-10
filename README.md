@@ -10,7 +10,7 @@ What is Necessary to Play:
 
 		mkdir myfoldername
 
-To change directories to get into that folder, type
+- To change directories to get into that folder, type
 
 		cd my foldername
 
