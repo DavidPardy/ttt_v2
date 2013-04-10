@@ -28,20 +28,30 @@ After that process finishes, type:
 Git Clone Repository VS. Downloading the Zip Format of this App:
 --------
 
-- If you go to the top of this page you will see a few buttons to click under 'DavidPardy/ttt_v2'. Those being 'ZIP', 'HTTP', 'SSH', and 'Git Read-Only'.
+If you go to the top of this page you will see a few buttons to click under 'DavidPardy/ttt_v2'. Those being 'ZIP', 'HTTP', 'SSH', and 'Git Read-Only'.
 
-- If you want to play this game without going through the hassle of installing Git, click the 'ZIP' button and it should download this application to your 'Downloads' directory. Once downloaded, copy this folder over to your 'myfoldername' you created earlier. Since the app is called 'ttt_v2' and you should still be in 'myfoldername' from earlier, type:
+If you want to play this game without going through the hassle of installing Git, click the 'ZIP' button and it should download this application to your 'Downloads' directory. Once downloaded, copy this folder over to your 'myfoldername' you created earlier. Since the app is called 'ttt_v2' and you should still be in 'myfoldername' from earlier, type:
 
 		cd ttt_v2
 
-- Now you are in the Tic-Tac-Toe program. To play, type:
+Now you are in the Tic-Tac-Toe program. To play, type:
 
 		ruby lib/start_game.rb
 
-- If you want to do a git clone of this repository, you will need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. Follow the directions and choose the default features.
+If you want to do a git clone of this repository, you will need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. Follow the directions and choose the default features.
 
-- Now that Git and Ruby are installed
+After installing Git, you will need to 'git clone' this repository. Make sure you have the 'HTTP' button selected at the top of this screen. To do so, type this in the terminal:
 
-- To run the game, type in 'ruby start_game.rb'. This should bring up the board and ask for human input.
+		git clone git@github.com:DavidPardy/ttt_v2.git
 
-- The game is currently set up as human versus computer. The human is represented by an 'X' on the board, while the computer is shown as a 'O' on the board.
+You will need to change directories (cd) into the cloned repository. To do so, type:
+
+		cd ttt_v2
+
+To run the game, type:
+
+		ruby lib/start_game.rb
+
+This should bring up the board and ask for human input.
+
+The game is currently set up as human versus computer. The human is represented by an 'X' on the board, while the computer is shown as a 'O' on the board.
