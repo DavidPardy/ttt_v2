@@ -6,7 +6,15 @@ What is Necessary to Play:
 
 - Open up your Mac OS X Terminal. This can be found by hitting command + space at the same time. Type in 'terminal' and it will appear in the list. Click to open.
 
-- Once your terminal is open, copy and paste the below line to install RVM
+-You may want to make a folder for this repository. To do so, type:
+
+		mkdir myfoldername
+
+To change directories to get into that folder, type
+
+		cd my foldername
+
+- Once your terminal is open (and in the above folder you created, if so desired), copy and paste the below line to install RVM
 
 		\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
 
