@@ -6,7 +6,7 @@ What is Necessary to Play:
 
 - Open up your Mac OS X Terminal. This can be found by hitting command + space at the same time. Type in 'terminal' and it will appear in the list. Click to open.
 
--You may want to make a folder for this repository. To do so, type:
+- You may want to make a folder for this repository. To do so, type:
 
 		mkdir myfoldername
 
