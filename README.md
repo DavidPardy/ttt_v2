@@ -18,9 +18,17 @@ What is Necessary to Play:
 
 		\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
 
-- You will also need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. Follow the directions and choose the default features.
+- RVM doesn't install Ruby, but gives you the ability to do so (as it is just a Ruby Version Manager). To install Ruby 1.9.3, type this in the terminal:
 
-- Now that Git and 
+		rvm get head && rvm reload
+
+- After that process finishes, type: 
+
+		rvm install 1.9.3
+
+- If you want to do a git clone of this repository, you will need [Git](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) installed. This is a version control management system. Choose the top .dmg package to install. Follow the directions and choose the default features.
+
+- Now that Git and Ruby are installed
 
 - To run the game, type in 'ruby start_game.rb'. This should bring up the board and ask for human input.
 
