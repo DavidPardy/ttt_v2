@@ -49,6 +49,8 @@ class Computer
     chosen_move ||= blocking
     if chosen_move != false
       return chosen_move
+    elsif chosen_move == false
+      return blocking
     else
       return competitive
     end
