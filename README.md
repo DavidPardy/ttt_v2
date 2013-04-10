@@ -2,11 +2,11 @@ Tic-Tac-Toe Built Using the Ruby Programming Language
 ========
 What is Necessary to Play:
 --------
-- You will need Ruby installed. For Mac Users, I highly recommend [RVM](https://rvm.io/).
+You will need Ruby installed. For Mac Users, I highly recommend [RVM](https://rvm.io/).
 
-- Open up your Mac OS X Terminal. This can be found by hitting command + space at the same time. Type in 'terminal' and it will appear in the list. Click to open.
+Open up your Mac OS X Terminal. This can be found by hitting command + space at the same time. Type in 'terminal' and it will appear in the list. Click to open.
 
-- You may want to make a folder for this repository. To do so, type:
+You may want to make a folder for this repository. To do so, type:
 
 		mkdir myfoldername
 
