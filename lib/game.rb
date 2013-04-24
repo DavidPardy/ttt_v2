@@ -10,7 +10,7 @@ class Game
       human_move = human.move
       board.spaces[human_move] = get_symbol
       @p1 << human_move
-      sleep(1)
+      #sleep(1)
       board.draw_board unless game_loop(board)
       break if @game_over
       computer_move = computer.move(board, @p1, @p2)
