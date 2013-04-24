@@ -1,13 +1,13 @@
 class Computer
   def move(board, human, computer)
     optimal = optimal_move(board, human, computer)
-      sleep(1)
+      #sleep(1)
       puts "It's the computer's turn..."
     if optimal == false
-      sleep(3)
+      #sleep(3)
       chosen_move = random_smart_move(board, computer)
     else
-      sleep(3)
+      #sleep(3)
       chosen_move = optimal
     end
     chosen_move
@@ -31,7 +31,7 @@ class Computer
     Board::WINNING_COMBOS.each do |combo|
       difference = combo - computer
       if difference.length == 2
-        move = difference.last
+        move = difference.first
         if board.available_space?(move)
           return move
         end
@@ -42,14 +42,15 @@ class Computer
 
   def optimal_move(board, human, computer)
     winning = winning_move(board, computer)
-    chosen_move = winning
+    
     blocking = blocking_move(board, human)
     competitive = competitive_move(board, computer)
 
-    chosen_move ||= blocking
-    if chosen_move != false
-      return chosen_move
-    elsif chosen_move == false
+    winning ||= blocking
+    blocking ||= competitive
+    if winning != false
+      return winning
+    elsif winning == false
       return blocking
     else
       return competitive
