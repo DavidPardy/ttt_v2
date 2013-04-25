@@ -1,3 +1,4 @@
+require 'spec_helper'
 describe "the computer player" do
   it "selects the correct spot when it has an available winning move" do
     computer = Computer.new
@@ -18,9 +19,9 @@ describe "the computer player" do
   # end
 
   # it "selects a competitive move when the human has spots 4 and 8" do
-  #   computer = Computer.new
-  #   board = Board.new
-  #   computer.competitive_move(board, [5]).should eq(6)
+  #  computer = Computer.new
+  #  board = Board.new
+  #  computer.competitive_move(board, [5]).should eq(6)
   # end
   
   it "selects a competitive move when 3 and 8 are selected" do
@@ -34,5 +35,15 @@ describe "the computer player" do
     puts "***MOVE IS #{move}***"
     move.should_not == 2
   end
-  
+
+  it "selects a competitive move when 1 and 6 are selected" do
+    board = Board.new
+    board.spaces = { 1 => "X", 2 => "2", 3 => "3", 4 => "4", 5 => "O", 6 => "X", 7 => "7", 8 => "X", 9 => "9" }
+    computer = [5]
+    human = [1,6]
+
+    move = Computer.new.competitive_move(board, human, computer)
+    puts "***MOVE IS #{move}***"
+    move.should == 4
+  end
 end
