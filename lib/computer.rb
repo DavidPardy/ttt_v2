@@ -5,7 +5,7 @@ class Computer
       puts "It's the computer's turn..."
     if optimal == false
       #sleep(3)
-      chosen_move = random_smart_move(board, computer)
+      chosen_move = random_smart_move(board, human, computer)
     else
       #sleep(3)
       chosen_move = optimal
@@ -13,9 +13,9 @@ class Computer
     chosen_move
   end
 
-  def random_smart_move(board, computer)
+  def random_smart_move(board, human, computer)
     available = nil
-    comp = competitive_move(board, computer)
+    comp = competitive_move(board, human, computer)
     if board.available_space?(5)
       available = 5
     else
@@ -24,7 +24,7 @@ class Computer
         break if available
       end
     end
-    return available || comp
+    return available
   end
 
   def competitive_move(board, human, computer)
@@ -41,20 +41,9 @@ class Computer
   end
 
   def optimal_move(board, human, computer)
-    winning = winning_move(board, computer)
-    
-    blocking = blocking_move(board, human)
-    competitive = competitive_move(board, computer)
-
-    winning ||= blocking
-    blocking ||= competitive
-    if winning != false
-      return winning
-    elsif winning == false
-      return blocking
-    else
-      return competitive
-    end
+    move = winning_move(board, computer)
+    move ||= blocking_move(board, human)
+    move ||= competitive_move(board, human, computer)
   end
 
   def winning_move(board, computer)
