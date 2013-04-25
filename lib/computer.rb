@@ -27,17 +27,17 @@ class Computer
     return available || comp
   end
 
-  def competitive_move(board, computer)
+  def competitive_move(board, human, computer)
+    return false if computer.empty?
     Board::WINNING_COMBOS.each do |combo|
-      difference = combo - computer
-      if difference.length == 2
-        move = difference.first
-        if board.available_space?(move)
-          return move
-        end
+      if combo.include?(human.first) && !combo.include?(computer.first)
+        move = (combo - [human.first]).sample
+        return move if board.available_space?(move)
+      elsif combo.include?(human.last) && !combo.include?(computer.first)
+        move = (combo - [human.last]).sample
+        return move if board.available_space?(move)
       end
     end
-    return false
   end
 
   def optimal_move(board, human, computer)
