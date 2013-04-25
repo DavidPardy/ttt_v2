@@ -15,7 +15,6 @@ class Computer
 
   def random_smart_move(board, human, computer)
     available = nil
-    comp = competitive_move(board, human, computer)
     if board.available_space?(5)
       available = 5
     else
@@ -28,7 +27,7 @@ class Computer
   end
 
   def competitive_move(board, human, computer)
-    return false if computer.empty?
+    return false if computer.length == 1
     Board::WINNING_COMBOS.each do |combo|
       if combo.include?(human.first) && !combo.include?(computer.first)
         move = (combo - [human.first]).sample
